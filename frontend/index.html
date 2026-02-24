@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raíz - Lujo Orgánico & Artesanía</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container navbar-content">
+      <a href="index.html" class="logo">🌿 RAÍZ</a>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link active">Inicio</a>
+        <a href="shop.html" class="nav-link">Tienda</a>
+        <a href="cart.html" class="nav-link">Carrito <span class="cart-count">0</span></a>
+        <a href="admin.html" class="nav-link">Administración</a>
+      </div>
+      <button class="mobile-menu-toggle">☰</button>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Lujo Orgánico</h1>
+      <p>Descubre nuestra colección de artesanía contemporánea</p>
+      <a href="shop.html" class="btn btn-primary">Explorar Tienda</a>
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS -->
+  <section class="featured">
+    <div class="container">
+      <h2>Destacados</h2>
+      <div class="products-grid" id="featuredProducts">
+        <!-- Products loaded by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 RAÍZ. Lujo Orgánico & Artesanía Contemporánea</p>
+      <p>Contacto: <a href="mailto:contacto@raiz.com">contacto@raiz.com</a></p>
+    </div>
+  </footer>
+
+  <div id="toast-container"></div>
+  <script src="js/services/api.js" type="module"></script>
+  <script src="js/utils.js" type="module"></script>
+  <script src="js/index.js" type="module"></script>
+</body>
+</html>

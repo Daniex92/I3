@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administración - Raíz</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-page">
+  <div id="loginPage" class="login-page">
+    <div class="login-container">
+      <h1>🌿 RAÍZ Admin</h1>
+      <form id="loginForm">
+        <div class="form-group">
+          <label>Usuario</label>
+          <input type="text" name="username" required>
+        </div>
+        <div class="form-group">
+          <label>Contraseña</label>
+          <input type="password" name="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+      </form>
+      <p class="login-hint">Usuario: <strong>admin</strong> | Contraseña: <strong>admin123</strong></p>
+    </div>
+  </div>
+
+  <div id="adminDashboard" style="display: none;">
+    <nav class="navbar">
+      <div class="container navbar-content">
+        <a href="index.html" class="logo">🌿 RAÍZ</a>
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link">Salir</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container admin-container">
+      <h1>Panel de Administración</h1>
+
+      <!-- TAB NAVIGATION -->
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="inventory">Inventario</button>
+        <button class="tab-btn" data-tab="orders">Órdenes</button>
+        <button class="tab-btn" data-tab="settings">Configuración</button>
+      </div>
+
+      <!-- INVENTORY TAB -->
+      <div class="tab-content active" id="inventory">
+        <h2>Inventario de Productos</h2>
+        
+        <div class="add-product">
+          <h3>Agregar Nuevo Producto</h3>
+          <form id="addProductForm">
+            <div class="form-group">
+              <label>Nombre</label>
+              <input type="text" name="name" required>
+            </div>
+            <div class="form-group">
+              <label>Descripción</label>
+              <textarea name="description" required></textarea>
+            </div>
+            <div class="form-group">
+              <label>Categoría</label>
+              <select id="categorySelect" name="category" required>
+                <option value="">Seleccionar...</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Subcategoría</label>
+              <select id="subcategorySelect" name="subcategory" required>
+                <option value="">Seleccionar...</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Precio</label>
+              <input type="number" name="price" step="0.01" required>
+            </div>
+            <div class="form-group">
+              <label>Stock</label>
+              <input type="number" name="stock" required>
+            </div>
+            <div class="form-group">
+              <label>URL de Imagen</label>
+              <input type="url" name="image_url">
+            </div>
+            <button type="submit" class="btn btn-primary">Agregar Producto</button>
+          </form>
+        </div>
+
+        <h3>Productos Actuales</h3>
+        <table class="products-table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Stock</th>
+              <th>Categoría</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="productsList">
+            <!-- Products loaded by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ORDERS TAB -->
+      <div class="tab-content" id="orders">
+        <h2>Órdenes Recientes</h2>
+        <table class="orders-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Cliente</th>
+              <th>Total</th>
+              <th>Estado</th>
+              <th>Fecha</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="ordersList">
+            <!-- Orders loaded by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- SETTINGS TAB -->
+      <div class="tab-content" id="settings">
+        <h2>Configuración General</h2>
+        <div class="settings-form">
+          <div class="form-group">
+            <label>Costo de Envío</label>
+            <input type="number" id="shippingCost" step="0.01" value="10.00">
+            <button id="updateShippingBtn" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+  <script src="js/services/api.js" type="module"></script>
+  <script src="js/utils.js" type="module"></script>
+  <script src="js/admin.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html><!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html></body>  <script src="js/cart.js" type="module"></script>  <script src="js/utils.js" type="module"></script>  <script src="js/services/api.js" type="module"></script>  <div id="toast-container"></div>  </footer>    </div>      <p>&copy; 2024 RAÍZ. Lujo Orgánico & Artesanía Contemporánea</p>    <div class="container">  <footer class="footer">  </div>    </div>      <a href="index.html" class="btn btn-primary">Volver al Inicio</a>      <p>Recibirás un email de confirmación en breve.</p>      <p>Tu orden número <strong id="orderId"></strong> ha sido creada.</p>      <h2>¡Compra Exitosa!</h2>    <div class="modal-content">  <div id="successModal" class="modal" style="display: none;">  <!-- Success Modal -->  </div>    </div>      </div>        </form>          <button type="submit" class="btn btn-primary btn-large">Completar Compra</button>          </div>            <textarea name="customer_address" required rows="3"></textarea>            <label>Dirección</label>          <div class="form-group">          </div>            <input type="tel" name="customer_phone" required>            <label>Teléfono</label>          <div class="form-group">          </div>            <input type="email" name="customer_email" required>            <label>Email</label>          <div class="form-group">          </div>            <input type="text" name="customer_name" required>            <label>Nombre Completo</label>          <div class="form-group">                    <h2>Información de Envío</h2>        <form id="checkoutForm" class="checkout-form">        </div>          </div>            <span id="total">$0.00</span>            <span>Total:</span>          <div class="summary-row total">          </div>            <span id="shipping">$10.00</span>            <span>Envío:</span>          <div class="summary-row">          </div>            <span id="subtotal">$0.00</span>            <span>Subtotal:</span>          <div class="summary-row">        <div class="cart-summary">      <div class="checkout-section">      </div>        </table>          </tbody>            <!-- Items loaded by JavaScript -->          <tbody id="cartItemsList">          </thead>            </tr>              <th></th>              <th>Total</th>              <th>Cantidad</th>              <th>Precio</th>              <th>Producto</th>            <tr>          <thead>        <table class="cart-table">      <div class="cart-items">    <div id="cartContent" style="display: none;">    </div>      <a href="shop.html" class="btn btn-primary">Ir a Tienda</a>      <p>Tu carrito está vacío.</p>    <div id="emptyCart" class="empty-message" style="display: none;">    <h1>Carrito de Compras</h1>  <div class="container cart-container">  </nav>    </div>      <button class="mobile-menu-toggle">☰</button>      </div>        <a href="admin.html" class="nav-link">Administración</a>        <a href="cart.html" class="nav-link active">Carrito <span class="cart-count">0</span></a>        <a href="shop.html" class="nav-link">Tienda</a>        <a href="index.html" class="nav-link">Inicio</a>      <div class="nav-menu">      <a href="index.html" class="logo">🌿 RAÍZ</a>    <div class="container navbar-content">  <nav class="navbar"><body></head>  <link rel="stylesheet" href="css/style.css">  <title>Carrito de Compras - Raíz</title>  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <meta charset="UTF-8"><head><html lang="es"><html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle de Producto - Raíz</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar-content">
+      <a href="index.html" class="logo">🌿 RAÍZ</a>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="shop.html" class="nav-link">Tienda</a>
+        <a href="cart.html" class="nav-link">Carrito <span class="cart-count">0</span></a>
+        <a href="admin.html" class="nav-link">Administración</a>
+      </div>
+      <button class="mobile-menu-toggle">☰</button>
+    </div>
+  </nav>
+
+  <div class="container product-detail-container">
+    <a href="shop.html" class="breadcrumb">← Volver a Tienda</a>
+    
+    <div class="product-detail">
+      <div class="product-image">
+        <img id="productImage" src="" alt="Producto" class="main-image">
+      </div>
+
+      <div class="product-info">
+        <h1 id="productName"></h1>
+        <p id="productCategory" class="category"></p>
+        <p id="productDescription" class="description"></p>
+        
+        <div class="price-section">
+          <span class="price" id="productPrice"></span>
+          <span id="productStock" class="stock"></span>
+        </div>
+
+        <div class="quantity-selector">
+          <label>Cantidad</label>
+          <div class="quantity-input">
+            <button id="decreaseQty">−</button>
+            <input type="number" id="quantity" value="1" min="1">
+            <button id="increaseQty">+</button>
+          </div>
+        </div>
+
+        <button id="addToCartBtn" class="btn btn-primary btn-large">Agregar al Carrito</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 RAÍZ. Lujo Orgánico & Artesanía Contemporánea</p>
+    </div>
+  </footer>
+
+  <div id="toast-container"></div>
+  <script src="js/services/api.js" type="module"></script>
+  <script src="js/utils.js" type="module"></script>
+  <script src="js/product-detail.js" type="module"></script>
+</body>
+</html>
